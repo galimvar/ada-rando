@@ -1,15 +1,16 @@
+import { useState } from "react";
 import './ListeRando.css'
 import CarteRando from './CarteRando'
-import randonnees from './randonnees.json';
 
-function ListeRando() {
-	
+
+function ListeRando({donneesAffichees}) {
+
 	return (
 		<>
             <section className='randonnees'>
-                {randonnees.map((rando) =>
+                {donneesAffichees.map((rando) =>
                     <CarteRando key={rando.id}
-                            props={rando} />
+                            rando={rando}/>
                 )}
             </section>
 		</>
